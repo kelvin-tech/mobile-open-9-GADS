@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/voter_logo"
+        android:layout_marginTop="@dimen/logo_margin_top"
+        android:layout_width="@dimen/logo_width_height"
+        android:layout_height="@dimen/logo_width_height"
+        android:src="@drawable/votr_black"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/voter_image" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_input_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/text_input_layout_margin_top"
+        android:hint="@string/username"
+        android:textColorHint="@color/text_input_layout_color"
+        app:hintTextAppearance="?android:attr/textAppearanceMedium">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_edit_text"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_drawable"
+            android:inputType="text"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_input_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/text_input_layout_margin_top"
+        android:hint="@string/password"
+        android:textColorHint="@color/text_input_layout_color"
+        app:passwordToggleEnabled="true"
+        app:hintTextAppearance="?android:attr/textAppearanceMedium">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_text"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_drawable"
+            android:inputType="textPassword"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signin_button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/button_margin_top"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/login"
+        android:padding="10dp"
+        android:textColor="@color/button_text_color"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@drawable/button_drawable"/>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/text_layout"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:layout_gravity="center_horizontal"-->
+    <!--        android:layout_marginTop="16dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/questionnaire"-->
+    <!--            android:layout_marginEnd="5dp"-->
+    <!--            android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/sign_in"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textColor="#e12828"-->
+    <!--            android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--            android:clickable="true"-->
+    <!--            android:onClick="onSignIn"-->
+    <!--            android:focusable="true" />-->
+    <!--    </LinearLayout>-->
+
+</LinearLayout>

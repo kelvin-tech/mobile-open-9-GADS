@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_margin_top">20dp</dimen>
+    <dimen name="logo_width_height">100dp</dimen>
+    <dimen name="text_input_layout_margin_top">52dp</dimen>
+    <dimen name="button_margin_top">76dp</dimen>
+    <dimen name="logo_width_height_small">100dp</dimen>
+    <dimen name="text_input_layout_margin_top_small">24dp</dimen>
+    <dimen name="button_margin_top_small">48dp</dimen>
+</resources>
