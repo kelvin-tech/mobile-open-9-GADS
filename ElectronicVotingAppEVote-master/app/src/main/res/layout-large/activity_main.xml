@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +20,26 @@
         android:src="@drawable/votr_black"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/voter_image" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fullname_input_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/text_input_layout_margin_top_small"
+        android:hint="@string/fullname"
+        android:textColorHint="@color/text_input_layout_color"
+        app:hintTextAppearance="?android:attr/textAppearanceMedium">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullname_input_edit_text"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_drawable"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username_input_layout"
@@ -36,6 +60,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_input_layout"
@@ -139,3 +164,4 @@
 
 
 </LinearLayout>
+</ScrollView>

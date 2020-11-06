@@ -20,6 +20,7 @@ public interface MyAPI {
     @FormUrlEncoded
     @POST("register.php")
     Call<JsonResponse> mRegister(
+            @Field("name") String name,
 
             @Field("email") String email,
             @Field("password") String password,

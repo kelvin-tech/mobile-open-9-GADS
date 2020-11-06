@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-//import android.widget.TextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -22,6 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+
 public class MainActivity extends AppCompatActivity {
     ProgressDialog dialog;
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         dialog = new ProgressDialog(MainActivity.this);
         dialog.setMessage("Please wait...");
 
+
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,29 +43,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        txtLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-//                startActivity(loginIntent);
-//            }
-//        });
 
 
     }
 
-    String email, phone, password, password1;
+
+    public void onSignIn(View view) {
+        startActivity(new Intent(MainActivity.this,LoginActivity.class));
+    }
+
+
+    String name, email, phone, password, password1;
 
     @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void mValidate() {
 
-
+        name = tedtName.getText().toString().trim();
         email = tedtEmail.getText().toString().trim();
         phone = tedtPhone.getText().toString().trim();
         password = tedtPassword.getText().toString().trim();
         password1 = tedtPassword1.getText().toString().trim();
 
 
+
+        if (phone.isEmpty()) {
+            tedtPhone.setError("Enter Phone");
+            tedtPhone.requestFocus();
+            return;
+        }
         if (phone.isEmpty()) {
             tedtPhone.setError("Enter Phone");
             tedtPhone.requestFocus();
@@ -92,16 +100,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onSignIn(View view) {
-        startActivity(new Intent(MainActivity.this,LoginActivity.class));
-    }
+
+
 
     private void mRegister() {
         dialog.show();
         Retrofit retrofit = MyClient.getRetrofitClient();
         MyAPI myAPI = retrofit.create(MyAPI.class);
 
-        Call<JsonResponse> jsonResponseCall = myAPI.mRegister(email, password, phone);
+        Call<JsonResponse> jsonResponseCall = myAPI.mRegister(name, email, password, phone);
         jsonResponseCall.enqueue(new Callback<JsonResponse>() {
             @Override
             public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
@@ -131,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 //    private TextView txtLogin;
     private TextInputEditText tedtPassword;
     private TextInputEditText tedtPassword1;
+    private TextInputEditText tedtName;
 
     public void initViews() {
 
@@ -140,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
 //        txtLogin = (TextView) findViewById(R.id.signin_button);
         tedtPassword = (TextInputEditText) findViewById(R.id.password_edit_text);
         tedtPassword1 = (TextInputEditText) findViewById(R.id.cnf_password_edit_text);
+        tedtName = findViewById(R.id.fullname_input_edit_text);
     }
 
 }

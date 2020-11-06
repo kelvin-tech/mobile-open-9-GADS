@@ -4,6 +4,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.2"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.hst.gads.electronicvotingapp"
         minSdkVersion 23

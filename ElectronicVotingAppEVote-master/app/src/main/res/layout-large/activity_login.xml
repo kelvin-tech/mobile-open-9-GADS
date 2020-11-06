@@ -99,4 +99,31 @@
     <!--            android:focusable="true" />-->
     <!--    </LinearLayout>-->
 
+    <LinearLayout
+        android:id="@+id/text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_having_an_account"
+            android:layout_marginEnd="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup"
+            android:textStyle="bold"
+            android:textColor="#e12828"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:clickable="true"
+            android:onClick="onSignUp"
+            android:focusable="true" />
+    </LinearLayout>
+
 </LinearLayout>
